@@ -6,6 +6,7 @@ Ever wanted to make your own version of an existing Debian package and convenien
 
 - Download the source code of any package from the Ubuntu archive.
 - Modify the code to add your own personal patch.
+- Modify the Debian package specification files and build the package
 - Create a Personal Package Archive (PPA) to store your customized package.
 - Upload your customized package to your PPA for easy download and installation via `apt`.
 
