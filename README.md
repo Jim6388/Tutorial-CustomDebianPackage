@@ -14,6 +14,18 @@ By the end of this tutorial, you'll have a solid foundation of knowledge for cra
 
 ## Before we get started
 
+### Key terms
+
+- Debian package:
+  - A Debian package contains the metadata and conditions for installing software on a Debian GNU/Linux distribution or a Debian derivative such as Ubuntu.
+  - There are two kinds of Debian package: binary (`.deb`) and source package.
+  - Dive deeper into this [Manual](https://www.debian.org/doc/manuals/debian-faq/pkg-basics.en.html) for more details.
+- Launchpad: A platforms like GitHub, GitLab or BitBucket.
+- Personal Package Archives (PPAs): As the name suggests, ppa represents an environment, platform, or infrastructure for individual developers to publish software packages.
+- `sources.list`: It dictates the repositories `apt` can utilize for package downloads and installations.
+- Ubuntu archive: The Ubuntu archive, typically referred to as `archive.ubuntu.com`, is a comprehensive repository of software packages for Ubuntu and its derivatives. It serves as the central hub where users can find and download official packages for installing and updating software on their systems.
+- upstream source: Refers to the original source or repository of a software program or package.
+
 ### Scenario
 
 Let's get an overall picture of what I'm going to do in this tutorial:
