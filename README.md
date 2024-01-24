@@ -18,7 +18,7 @@ By the end of this tutorial, you'll have a solid foundation of knowledge for cra
 
 Let's get an overall picture of what I'm going to do in this tutorial:
 
-- Step 1: Download the source package:
+- Step 1: Download the source package from Ubuntu Archive:
   - Obtain the source of the existing `hello` package from the Ubuntu archive.
 - Step 2: Modify the upstream source:
   - Add a test script: Create a script named `testing.sh` that echoes "this is a test from ChunChia Tsao" to standard error (STDERR).
@@ -91,7 +91,7 @@ cd ~
 mkdir package_test
 ```
 
-### Step 1: Retrieve Source Code from Ubuntu Archive
+### Step 1: Download the source package from Ubuntu Archive
 
 #### Acquiring Source Packages with Apt
 
