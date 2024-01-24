@@ -1,0 +1,10 @@
+Description: Add testing script
+ Add a testing.sh script which will echo "this is a test from ChunChia Tsao" to stderr
+Author: ChunChia Tsao <jim6388@hotmail.com>
+Last-Update: 2024-01-24
+
+--- /dev/null
++++ hello-2.10/testing.sh
+@@ -0,0 +1,2 @@
++#!/bin/bash
++echo "this is a test from ChunChia Tsao" >&2
