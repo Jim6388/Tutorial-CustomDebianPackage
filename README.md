@@ -90,3 +90,35 @@ Open a terminal window. Execute the following command to navigate to your home d
 cd ~
 mkdir package_test
 ```
+
+### Step 1: Retrieve Source Code from Ubuntu Archive
+
+#### Acquiring Source Packages with Apt
+
+While multiple methods exist for obtaining source packages, we'll utilize the `apt` package manager for this tutorial. However, before downloading packages, we need to configure the sources list file to ensure `apt` can access the necessary repositories.
+
+#### Modifying the Sources List
+
+- Understanding `sources.list`:
+  - This file, typically found at `/etc/apt/sources.list`, dictates the repositories `apt` can utilize for package downloads and installations.
+  - Each line within represents a repository, using the format:
+    `package_type [option1=value1 option2=value2 ...] uri suite components`
+  - Breakdown:
+    - `package_type`: Indicates whether it's a binary (`deb`) or source (`deb-src`) package repository.
+    - `option`: Optional fields for attributes like architecture (e.g., `arch=amd64`).
+    - `uri`: The base URL of the repository (usually a network address or local path).
+    - `suite`: The codename of the Ubuntu release (e.g., `jammy`, `focal`, `bionic`).
+    - `components`: A list of package categories within the repository (e.g., `main`, `universe`, `restricted`, `multiverse`).
+- Activating Source Repositories:
+  - To enable source repositories for `apt`, you can manually uncomment the relevant lines in `/etc/apt/sources.list`. For the hello package, uncomment the line: `# deb-src http://archive.ubuntu.com/ubuntu/ jammy main restricted`
+  - Alternatively, use add-apt-repository:
+  `sudo add-apt-repository -s 'deb-src http://tw.archive.ubuntu.com/ubuntu/ jammy main'`
+  - After modifying sources.list, update package lists: `sudo apt update`
+- Retrieving the Source Package:
+  - Downloading with apt source:
+    - Use `apt source PACKAGE-NAME` to download the source package. For hello: `sudo apt source hello`
+  - The download generates several files:
+    - `hello-2.10`: Directory containing upstream source code and Debian package specification files.
+    - `hello_2.10-2ubuntu4.dsc`: File describing the source package.
+    - `hello_2.10-2ubuntu4.debian.tar.xz`: Contains modifications made by the Debian maintainer, including instructions for constructing Debian binary packages.
+    - `hello_2.10.orig.tar.gz`: The original, unmodified source code in gzip-compressed tar format.
