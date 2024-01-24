@@ -73,3 +73,20 @@ export DEBSIGN_KEYID
 - Add an OpenPGP Public Key:
   - Purpose: Verifies your identity for tasks like:
   - Guide: Follow these [Launchpad OpenPGP key import guide](https://launchpad.net/+help-registry/import-pgp-key.html).
+
+## Let's start our journey
+
+### Step 0: Set Up Your Workspace
+
+#### Establishing a Clean Slate
+
+It's a best practice to conduct experiments within a dedicated, empty directory. This ensures organization and avoids unintended file modifications. Let's create a working directory named `package_test` under your home directory for this purpose.
+
+#### Creating the Directory
+
+Open a terminal window. Execute the following command to navigate to your home directory and create the package_test directory:
+
+```bash
+cd ~
+mkdir package_test
+```
