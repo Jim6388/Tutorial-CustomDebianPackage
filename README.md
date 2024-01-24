@@ -187,7 +187,10 @@ Verify the content with cat: `cat postinst`
 
 The `changelog` file records package history and versions. We'll use the `debchange` command (alias `dch`) to edit it. For local builds, use `sudo -E dch --local ""`. Write a clear and concise changelog entry and save it.
 
-Tip: You can also edit `debian/changelog` manually, following the format used by `debchange`.
+Tips:
+
+- `sudo -E:` Grants elevated privileges for the build process and preserves environment variables.
+- You can also edit `debian/changelog` manually, following the format used by `debchange`.
 
 #### Building the Package
 
