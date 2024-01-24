@@ -1,0 +1,49 @@
+ dpkg-buildpackage -us -uc -ui -S
+dpkg-buildpackage: info: source package hello
+dpkg-buildpackage: info: source version 2.10-2ubuntu5
+dpkg-buildpackage: info: source distribution jammy
+dpkg-buildpackage: info: source changed by ChunChia Tsao <jim6388@hotmail.com>
+ dpkg-source --before-build .
+ debian/rules clean
+dh clean
+dh: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/home/jim6388/Tutorial-CustomDebianPackage/source_package/hello-2.10'
+[ ! -f Makefile ] || /usr/bin/make distclean
+make[1]: Leaving directory '/home/jim6388/Tutorial-CustomDebianPackage/source_package/hello-2.10'
+   dh_clean
+dh_clean: warning: Compatibility levels before 10 are deprecated (level 9 in use)
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building hello using existing ./hello_2.10.orig.tar.gz
+dpkg-source: info: using patch list from debian/patches/series
+dpkg-source: info: building hello in hello_2.10-2ubuntu5.debian.tar.xz
+dpkg-source: info: building hello in hello_2.10-2ubuntu5.dsc
+ dpkg-genbuildinfo --build=source -O../hello_2.10-2ubuntu5_source.buildinfo
+ dpkg-genchanges --build=source -O../hello_2.10-2ubuntu5_source.changes
+dpkg-genchanges: info: not including original source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: source-only, diff-only upload (original source NOT included)
+Now running lintian hello_2.10-2ubuntu5_source.changes ...
+running with root privileges is not recommended!
+W: hello source: custom-compression-in-debian-rules dh_builddeb -- -Zzstd (line 12)
+W: hello source: maintainer-script-lacks-debhelper-token [debian/postinst]
+W: hello source: package-uses-deprecated-debhelper-compat-version 9
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile dsc hello_2.10-2ubuntu5.dsc 343B7C732ACDE37C10A99F4DAA28CAD778A90687
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+
+ fixup_buildinfo hello_2.10-2ubuntu5.dsc hello_2.10-2ubuntu5_source.buildinfo
+ signfile buildinfo hello_2.10-2ubuntu5_source.buildinfo 343B7C732ACDE37C10A99F4DAA28CAD778A90687
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+
+ fixup_changes dsc hello_2.10-2ubuntu5.dsc hello_2.10-2ubuntu5_source.changes
+ fixup_changes buildinfo hello_2.10-2ubuntu5_source.buildinfo hello_2.10-2ubuntu5_source.changes
+ signfile changes hello_2.10-2ubuntu5_source.changes 343B7C732ACDE37C10A99F4DAA28CAD778A90687
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+gpg: WARNING: unsafe ownership on homedir '/home/jim6388/.gnupg'
+
+Successfully signed dsc, buildinfo, changes files
