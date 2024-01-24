@@ -122,3 +122,23 @@ While multiple methods exist for obtaining source packages, we'll utilize the `a
     - `hello_2.10-2ubuntu4.dsc`: File describing the source package.
     - `hello_2.10-2ubuntu4.debian.tar.xz`: Contains modifications made by the Debian maintainer, including instructions for constructing Debian binary packages.
     - `hello_2.10.orig.tar.gz`: The original, unmodified source code in gzip-compressed tar format.
+
+### Step 2: Modify the upstream source
+
+#### Adding a Custom Patch
+
+Navigate to the `hello-2.10` directory (the home of the upstream source) and create a `testing.sh` script that will echo a greeting message to standard error (STDERR):
+
+```bash
+cd hello-2.10
+echo '#!/bin/bash
+echo "this is a test from ChunChia Tsao" >&2' > testing.sh
+```
+
+#### Confirming Functionality
+
+- Granting Execution Permissions:
+  - Ensure the script is executable: `sudo chmod +x testing.sh`
+- Executing the Script:
+  - Verify its behavior by running it: `./testing.sh`
+  - You should observe the following output: `this is a test from ChunChia Tsao`
