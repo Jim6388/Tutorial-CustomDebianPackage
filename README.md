@@ -142,3 +142,66 @@ echo "this is a test from ChunChia Tsao" >&2' > testing.sh
 - Executing the Script:
   - Verify its behavior by running it: `./testing.sh`
   - You should observe the following output: `this is a test from ChunChia Tsao`
+
+### Step 3: Modify the Debian package specification files and rebuild
+
+Now, let's customize the Debian package specification files to integrate our `testing.sh` script and then rebuild the package for installation.
+
+#### Adding Installation Files
+
+- The `install` file controls what gets installed beyond the upstream source.
+- It can be named either `install` or `binary-package-name.install`, and resides in the `debian` subdirectory.
+- Each line specifies a file to copy, with the format: `source/path destination/path.`
+
+In our case, we want to copy `testing.sh` to `/usr/bin` during installation. Create an install file in the debian directory: 
+
+```bash
+# Before executing this command, navigate to the debian subdirectory within the upstream source
+echo "testing.sh /usr/bin" > install
+```
+
+Verify the content with cat: `cat install`
+
+#### Automating Script Execution
+
+- The `postinst` script runs automatically after package installation.
+- To execute `testing.sh` upon installation, let's add it to the post installation script
+
+Create a `postinst` script in the debian directory:
+
+```bash
+# Before executing this command, navigate to the debian subdirectory within the upstream source
+echo '#!/bin/sh
+/usr/bin/testing.sh' > postinst
+```
+
+Verify the content with cat: `cat postinst`
+
+#### Creating Modification Patch
+
+- Changes to the upstream source need to be stored as patches in the `debian/patches/` directory.
+- Run `dpkg-source --commit` to create a patch and write a proper commit message. 
+- Follow the guidelines in this [documentation](https://www.debian.org/doc/manuals/debmake-doc/ch05.en.html#native) to write a clear commit message.
+
+#### Updating Changelog
+
+The `changelog` file records package history and versions. We'll use the `debchange` command (alias `dch`) to edit it. For local builds, use `sudo -E dch --local ""`. Write a clear and concise changelog entry and save it.
+
+Tip: You can also edit `debian/changelog` manually, following the format used by `debchange`.
+
+#### Building the Package
+
+Finally, let's rebuild the package with `debuild`:
+
+```bash
+# Ensure you're in the upstream source directory before executing this command
+sudo -E debuild -S -k$DEBSIGN_KEYID
+```
+
+Upon successful completion, you'll find the new source package residing within the parent directory of upstream source directory.
+
+Tips:
+
+- `sudo -E:` Grants elevated privileges for the build process and preserves environment variables.
+- `-S`: Instructs `debuild` to create a source package only, suitable for distribution.
+- `-k$DEBSIGN_KEYID`: signs the package with your GPG key. Without correct signature, you can't upload the source package to PPA.
