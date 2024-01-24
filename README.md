@@ -212,3 +212,33 @@ Tips:
 ### Step 4: Create a Personal Package Archive (PPA)
 
 Head over to [launchpad](https://launchpad.net/) in your web browser and log in to your account. Within your account dashboard, locate the section named "Personal package archives" and click the "Create a new PPA" button. This button will redirect you to a new page. Follow the instructions on the new page to activate your new Personal Package Archive.
+
+### Step 5: Upload your customized package to PPA
+
+#### Uploading the Package
+
+Use the `dput` command to upload your custom source package to the PPA:
+
+```bash
+dput ppa:<username>/<ppa-name> <package_change_file>
+```
+
+Replace placeholders with our PPA details and change file. In our example it will be:
+
+```bash
+dput ppa:jim6388/testppa hello_2.10-2ubuntu5_source.changes
+```
+
+Tips:
+
+Please remember to replace placeholders correctly with your PPA details and change file.
+
+#### Waiting for Review and Build
+
+- Review Period: Upon successful upload, a review process ensures package quality and security. This might take some time.
+- Notification: You'll receive an email regarding package acceptance or rejection to the address associated with your Launchpad account.
+- Building Binary Package: If accepted, the PPA platform will automatically build the binary package, which also requires time.
+
+#### Checking Build Status
+
+Before attempting installation, verify the package's build status on Launchpad to ensure it's ready.
