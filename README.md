@@ -32,6 +32,7 @@ Let's get an overall picture of what I'm going to do in this tutorial:
   - Establish a PPA to store your customized package.
 - Step 5: Upload your customized package:
   - Upload your customized hello package to your PPA for easy download and installation via apt.
+- Step 6: Install your custom package from the PPA
 
 ### Prerequisite
 
@@ -242,3 +243,50 @@ Please remember to replace placeholders correctly with your PPA details and chan
 #### Checking Build Status
 
 Before attempting installation, verify the package's build status on Launchpad to ensure it's ready.
+
+### Step 6: Install your custom package from the PPA
+
+#### Add the PPA to Your Sources List
+
+- Visit the PPA's webpage in your web browser.
+- Locate the section titled "Adding this PPA to your system."
+- Copy and paste the provided commands into your terminal.
+
+In our example it will be:
+
+```bash
+sudo add-apt-repository ppa:jim6388/testppa
+sudo apt update
+```
+
+#### Install the Package
+
+Use apt install to download and install the package:
+
+```bash
+sudo apt install <package_name>
+```
+
+In our example the command and result will be:
+
+```bash
+$ sudo apt install hello
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  hello
+0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
+Need to get 53.6 kB of archives.
+After this operation, 281 kB of additional disk space will be used.
+Get:1 https://ppa.launchpadcontent.net/jim6388/testppa/ubuntu jammy/main amd64 hello amd64 2.10-2ubuntu5 [53.6 kB]
+Fetched 53.6 kB in 2s (35.7 kB/s)
+Selecting previously unselected package hello.
+(Reading database ... 41419 files and directories currently installed.)
+Preparing to unpack .../hello_2.10-2ubuntu5_amd64.deb ...
+Unpacking hello (2.10-2ubuntu5) ...
+Setting up hello (2.10-2ubuntu5) ...
+this is a test from ChunChia Tsao
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+```
