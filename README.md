@@ -205,3 +205,7 @@ Tips:
 - `sudo -E:` Grants elevated privileges for the build process and preserves environment variables.
 - `-S`: Instructs `debuild` to create a source package only, suitable for distribution.
 - `-k$DEBSIGN_KEYID`: signs the package with your GPG key. Without correct signature, you can't upload the source package to PPA.
+
+### Step 4: Create a Personal Package Archive (PPA)
+
+Head over to [launchpad](https://launchpad.net/) in your web browser and log in to your account. Within your account dashboard, locate the section named "Personal package archives" and click the "Create a new PPA" button. This button will redirect you to a new page. Follow the instructions on the new page to activate your new Personal Package Archive.
