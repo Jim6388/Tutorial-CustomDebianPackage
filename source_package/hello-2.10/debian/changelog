@@ -1,3 +1,13 @@
+hello (2.10-2ubuntu5) jammy; urgency=medium
+
+  * Add testing.sh script
+  * Add debian/install. In this install file, we instruct the apt to
+    move the unpack testing.sh to /usr/bin
+  * Add debian/postinst. In this post install script, it will invoke
+    usr/bin/testing.sh after unpacked the package.
+
+ -- ChunChia Tsao <jim6388@hotmail.com>  Wed, 24 Jan 2024 08:31:07 +0800
+
 hello (2.10-2ubuntu4) jammy; urgency=medium
 
   * No-change rebuild for ppc64el baseline bump.
