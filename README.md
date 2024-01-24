@@ -290,3 +290,11 @@ this is a test from ChunChia Tsao
 Processing triggers for man-db (2.10.2-1) ...
 Processing triggers for install-info (6.8-4build1) ...
 ```
+
+## Reference
+
+- [Guide for Debian Maintainers](https://www.debian.org/doc/manuals/debmake-doc/index.en.html): This guide focuses on the modern packaging style and comes with many simple examples.
+- [Ubuntu Packaging Guide](https://canonical-ubuntu-packaging-guide.readthedocs-hosted.com/en/latest/): This is the official place for learning all about Ubuntu Development and packaging.
+- [Repositories](https://help.ubuntu.com/community/Repositories/CommandLine): This wiki page show detail steps about how to add .repositories into source list.
+- [GPG Keys Management](https://docs.fedoraproject.org/en-US/quick-docs/create-gpg-keys/): This documents tells how to use `gpg` command.
+- [GnuPrivacyGuardHowto](https://help.ubuntu.com/community/GnuPrivacyGuardHowto): This wiki page gives a quick guide of how to use OpenPGP keys.
