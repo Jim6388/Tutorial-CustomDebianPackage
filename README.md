@@ -1,8 +1,8 @@
-# Tutorial-CustomDebianPackage
+# Tutorial - Custom Debian Package
 
 Build Your Own Custom Debian Packages!
 
-Ever wanted to make your own version of an existing Debian package and conveniently share it with others? If so, then this tutorial is for you! We'll guide you through the step-by-step process of building and hosting your own customized packages, allowing you to:
+Ever wanted to make your own version of an existing Debian package and conveniently share it with others? If so, then this tutorial is for you! I'll guide you through the step-by-step process of building and hosting your own customized packages, allowing you to:
 
 - Download the source code of any package from the Ubuntu archive.
 - Modify the code to add your own personal patch.
@@ -12,7 +12,7 @@ Ever wanted to make your own version of an existing Debian package and convenien
 
 By the end of this tutorial, you'll have a solid foundation of knowledge for crafting and sharing your own Debian packages. This opens up a world of possibilities for customizing your system and contributing to the Debian ecosystem.
 
-## Before We Get Started
+## Before we get started
 
 ### Scenario
 
@@ -32,7 +32,7 @@ Let's get an overall picture of what I'm going to do in this tutorial:
   - Establish a PPA to store your customized package.
 - Step 5: Upload your customized package:
   - Upload your customized hello package to your PPA for easy download and installation via apt.
-- Step 6: Install your custom package from the PPA
+- Step 6: Install your customized package from the PPA
 
 ### Prerequisite
 
@@ -45,7 +45,7 @@ Let's get an overall picture of what I'm going to do in this tutorial:
     - `openssh-client`
   - Install any missing packages: Use `apt` to install them.
 - Secure Your Connection:
-  - Create an SSH key pair: This is vital for publishing your code on to PPA.
+  - Create an SSH key pair: This is vital for publishing your code to PPA.
   - Follow these clear [steps](https://help.launchpad.net/YourAccount/CreatingAnSSHKeyPair)
 - Verify Your Identity:
   - Create an OpenPGP key pair: This is crucial for:
@@ -70,10 +70,10 @@ export DEBSIGN_KEYID
 
 - Add an SSH Public Key:
   - Purpose: Enables secure communication with Launchpad.
-  - Guide: Follow these [key creating and registering guide](https://help.launchpad.net/YourAccount/CreatingAnSSHKeyPair).
+  - Guide: Follow this [key creating and registering guide](https://help.launchpad.net/YourAccount/CreatingAnSSHKeyPair).
 - Add an OpenPGP Public Key:
   - Purpose: Verifies your identity for tasks like:
-  - Guide: Follow these [Launchpad OpenPGP key import guide](https://launchpad.net/+help-registry/import-pgp-key.html).
+  - Guide: Follow this [Launchpad OpenPGP key import guide](https://launchpad.net/+help-registry/import-pgp-key.html).
 
 ## Let's start our journey
 
@@ -121,7 +121,7 @@ While multiple methods exist for obtaining source packages, we'll utilize the `a
   - The download generates several files:
     - `hello-2.10`: Directory containing upstream source code and Debian package specification files.
     - `hello_2.10-2ubuntu4.dsc`: File describing the source package.
-    - `hello_2.10-2ubuntu4.debian.tar.xz`: Contains modifications made by the Debian maintainer, including instructions for constructing Debian binary packages.
+    - `hello_2.10-2ubuntu4.debian.tar.xz`: Contains modifications made by the Debian maintainer, including instructions for constructing Debian packages.
     - `hello_2.10.orig.tar.gz`: The original, unmodified source code in gzip-compressed tar format.
 
 ### Step 2: Modify the upstream source
@@ -224,7 +224,7 @@ Use the `dput` command to upload your custom source package to the PPA:
 dput ppa:<username>/<ppa-name> <package_change_file>
 ```
 
-Replace placeholders with our PPA details and change file. In our example it will be:
+Replace placeholders with our PPA details and change file. In our example, it will be:
 
 ```bash
 dput ppa:jim6388/testppa hello_2.10-2ubuntu5_source.changes
@@ -244,7 +244,7 @@ Please remember to replace placeholders correctly with your PPA details and chan
 
 Before attempting installation, verify the package's build status on Launchpad to ensure it's ready.
 
-### Step 6: Install your custom package from the PPA
+### Step 6: Install your customized package from the PPA
 
 #### Add the PPA to Your Sources List
 
@@ -267,7 +267,7 @@ Use apt install to download and install the package:
 sudo apt install <package_name>
 ```
 
-In our example the command and result will be:
+In our example, the command and result are:
 
 ```bash
 $ sudo apt install hello
