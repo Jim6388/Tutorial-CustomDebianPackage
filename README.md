@@ -14,6 +14,14 @@ By the end of this tutorial, you'll have a solid foundation of knowledge for cra
 
 ## Before we get started
 
+## Hierarchy
+
+``` bash
+.
+├── README.md       # Tutorial: Building a Customized Hello Package with Debian Packaging
+└── source_package  # Source code and packaging materials for the customized hello package. See the commit history for detailed build steps: 
+```
+
 ### Key terms
 
 - Debian package:
