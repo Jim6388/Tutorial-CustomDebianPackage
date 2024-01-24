@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 24 Jan 2024 08:31:07 +0800
+Source: hello
+Built-For-Profiles: noudeb
+Architecture: source
+Version: 2.10-2ubuntu5
+Distribution: jammy
+Urgency: medium
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Changed-By: ChunChia Tsao <jim6388@hotmail.com>
+Changes:
+ hello (2.10-2ubuntu5) jammy; urgency=medium
+ .
+   * Add testing.sh script
+   * Add debian/install. In this install file, we instruct the apt to
+     move the unpack testing.sh to /usr/bin
+   * Add debian/postinst. In this post install script, it will invoke
+     usr/bin/testing.sh after unpacked the package.
+Checksums-Sha1:
+ 3d2686868a1c62b43a8e6c17c22350d1157cac72 1636 hello_2.10-2ubuntu5.dsc
+ 9e2c341abab97bdf1bd785379051e3fff22bdd2e 7232 hello_2.10-2ubuntu5.debian.tar.xz
+ 68b0256c1aee004af0b09dcbddb3996950d4bc09 6516 hello_2.10-2ubuntu5_source.buildinfo
+Checksums-Sha256:
+ a0cad90b351c208f67e7d7defb2cb9d5a3855e64c9ff6f400bd494b358011799 1636 hello_2.10-2ubuntu5.dsc
+ 7ce3b9c311799b9e8c85a7ebb6306e907402ff88f2b3cdbb08f567fe866f673f 7232 hello_2.10-2ubuntu5.debian.tar.xz
+ 785e6d04aeeecea2c26af87e7c9b26e2918f6d969d88e83bc598df60b31bcb69 6516 hello_2.10-2ubuntu5_source.buildinfo
+Files:
+ 836906e2a6b4135d515290a5ab0830a6 1636 devel optional hello_2.10-2ubuntu5.dsc
+ aee10ba236ec47419767649ac6e00e4c 7232 devel optional hello_2.10-2ubuntu5.debian.tar.xz
+ 59c6c1129b494c7b4f9990c880f7676f 6516 devel optional hello_2.10-2ubuntu5_source.buildinfo
+Original-Maintainer: Santiago Vila <sanvila@debian.org>
+
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEENDt8cyrN43wQqZ9NqijK13ipBocFAmWwbdUACgkQqijK13ip
+Bod60gv7BMEuTcrXl/LaiC5oNyVgQcOvjJ76PNAxsa8zdSOumxoTccMsf6A4XIIR
+xLQfeFyZtaN9Fvz6jJVih03Axvs4Lh9J0kJMaU9MlKeVldXoY9HLBvzXctNkEvBE
+i4N033Wi8SqtiJnDh2MnIfiYA9pMG4FQ9OrjgkRG+U1wYANpNezixp47ywGi+KxR
+II8Gm0l1Pz8O02aP0UDNZgcZ408MgJkdm+rKb5vvp0QQL976QJ3sKMr5YY/NNCx9
+HC6y4tNkkbkh27B+MiMo6Vs+oNEc1YEeYmNaBG3c48vwtGj4gL/kPrXFcJbfwFOz
+hmrsLSQcX8lQ8Yn+4S+CW/6ql+PUGZewRI3rUtx/a2Kk4B73Cv95NBIn2fqouOQH
+4SSpRpjypx82LRXjEYGJ0rcHPiKS5j1t5hnL/EDrupf+m3ZYTbQrvij50Jwg77a0
+DVLJwQo885Fms2cWxg2pkvjoZ+NPE1GSk7vCeI3gEXiYZ8pmLBKkBnO0FJDJtHof
+6GgQYF1n
+=e4Vg
+-----END PGP SIGNATURE-----
